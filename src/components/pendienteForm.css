@@ -1,0 +1,32 @@
+.pendienteForm {
+  margin-bottom: 20px;
+}
+
+.form-pendiente {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-pendiente-form {
+  margin-bottom: 10px;
+}
+
+.select-pendiente-form,
+.input-pendiente-form {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.button-pendiente-form {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-pendiente-form:hover {
+  background-color: #45a049;
+}
