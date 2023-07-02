@@ -1,6 +1,6 @@
 import "./pendienteForm.css";
-import { crearPendiente } from "../funtions/crearPendiente.js";
-const PendienteForm = () => {
+import { createPending } from "../funtions/createPending.js";
+const PendienteForm = ({ refreshAllPending }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -9,8 +9,9 @@ const PendienteForm = () => {
     const contact = e.target.contact.value;
 
     const data = { priority, description, contact };
-    await crearPendiente(data);
+    await createPending(data);
     e.target.reset();
+    refreshAllPending();
   };
 
   return (

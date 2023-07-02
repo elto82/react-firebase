@@ -1,7 +1,7 @@
 import { db } from "../firebase/credentials";
 import { collection, addDoc } from "firebase/firestore";
 
-export async function crearPendiente(data) {
+export async function createPending(data) {
   try {
     const collectionRef = collection(db, "pendiente");
     const pedienteId = await addDoc(collectionRef, data);
