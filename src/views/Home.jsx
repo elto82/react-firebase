@@ -27,12 +27,12 @@ const Home = ({ user }) => {
     <div className="home">
       <h1 className="title">Home</h1>
       <Navbar user={user} />
-      {selectedPending && (
-        <EditPendingModal
-          pendiente={selectedPending}
-          refreshAllPending={refreshAllPending}
-        />
-      )}
+
+      <EditPendingModal
+        pendiente={selectedPending}
+        refreshAllPending={refreshAllPending}
+      />
+
       <PendienteForm refreshAllPending={refreshAllPending} />
       {allPending &&
         allPending.map((pending) => (

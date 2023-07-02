@@ -14,8 +14,16 @@ const EditPendingModal = ({ pendiente, refreshAllPending }) => {
     editPending(pendingEdit.id, pendingEdit).then((res) => {
       const modal = document.getElementById("modal-editar-pendiente");
       refreshAllPending();
-      modal.closest();
+      modal.close();
     });
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setPendingEdit((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
   };
 
   return (
@@ -27,12 +35,7 @@ const EditPendingModal = ({ pendiente, refreshAllPending }) => {
             id="priority"
             className="select-pendiente-form"
             value={pendingEdit?.priority}
-            onChange={(e) => {
-              setPendingEdit({
-                ...pendingEdit,
-                priority: e.target.value,
-              });
-            }}
+            onChange={handleInputChange}
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -47,12 +50,7 @@ const EditPendingModal = ({ pendiente, refreshAllPending }) => {
             id="description"
             className="input-pendiente-form"
             type="text"
-            onChange={(e) => {
-              setPendingEdit({
-                ...pendingEdit,
-                description: e.target.value,
-              });
-            }}
+            onChange={handleInputChange}
           />
         </label>
 
@@ -63,12 +61,7 @@ const EditPendingModal = ({ pendiente, refreshAllPending }) => {
             className="input-pendiente-form"
             type="email"
             value={pendingEdit?.contact}
-            onChange={(e) => {
-              setPendingEdit({
-                ...pendingEdit,
-                contact: e.target.value,
-              });
-            }}
+            onChange={handleInputChange}
           />
         </label>
 
