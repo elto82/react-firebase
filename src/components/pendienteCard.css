@@ -39,3 +39,18 @@
 .btn-editar:hover {
   background-color: #0056b3;
 }
+
+.btn-eliminar {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 4px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 30px;
+  margin-top: 24px;
+}
+
+.btn-eliminar:hover {
+  background-color: #cc0000;
+}

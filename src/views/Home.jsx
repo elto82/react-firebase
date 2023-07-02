@@ -40,6 +40,7 @@ const Home = ({ user }) => {
             pendiente={pending}
             key={pending.id}
             setSelectedPending={setSelectedPending}
+            refreshAllPending={refreshAllPending}
           />
         ))}
     </div>

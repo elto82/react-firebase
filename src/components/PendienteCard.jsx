@@ -1,6 +1,10 @@
 import "./pendienteCard.css";
-
-const PendienteCard = ({ pendiente, setSelectedPending }) => {
+import { deletePending } from "../funtions/deletePending";
+const PendienteCard = ({
+  pendiente,
+  setSelectedPending,
+  refreshAllPending,
+}) => {
   const mostrarModal = () => {
     setSelectedPending(pendiente);
     const modal = document.getElementById("modal-editar-pendiente");
@@ -25,6 +29,16 @@ const PendienteCard = ({ pendiente, setSelectedPending }) => {
       </div>
       <button className="btn-editar" onClick={mostrarModal}>
         Editar
+      </button>
+      <button
+        className="btn-eliminar"
+        onClick={() => {
+          deletePending(pendiente.id).then((confirm) => {
+            refreshAllPending();
+          });
+        }}
+      >
+        Eliminar
       </button>
     </div>
   );
