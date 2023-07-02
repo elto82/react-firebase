@@ -1,0 +1,43 @@
+.modal-dialog-pendiente {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff5d;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  width: 300px;
+  backdrop-filter: blur(8px);
+}
+
+.form-pendiente {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-pendiente-form {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.select-pendiente-form,
+.input-pendiente-form {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.button-pendiente-form {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-pendiente-form:hover {
+  background-color: #0056b3;
+}

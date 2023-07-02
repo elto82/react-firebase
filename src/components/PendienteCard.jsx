@@ -1,6 +1,12 @@
 import "./pendienteCard.css";
 
-const PendienteCard = ({ pendiente }) => {
+const PendienteCard = ({ pendiente, setSelectedPending }) => {
+  const mostrarModal = () => {
+    setSelectedPending(pendiente);
+    const modal = document.getElementById("modal-editar-pendiente");
+    modal.showModal();
+  };
+
   return (
     <div className="container-card">
       <div className="card">
@@ -17,6 +23,9 @@ const PendienteCard = ({ pendiente }) => {
         <h3>Contacto</h3>
         <p>{pendiente.contact}</p>
       </div>
+      <button className="btn-editar" onClick={mostrarModal}>
+        Editar
+      </button>
     </div>
   );
 };
