@@ -30,3 +30,17 @@
 .button-pendiente-form:hover {
   background-color: #45a049;
 }
+
+.buton-buscar {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.buton-buscar:hover {
+  background-color: #45a049;
+}

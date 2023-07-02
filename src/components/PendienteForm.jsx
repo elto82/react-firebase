@@ -42,6 +42,15 @@ const PendienteForm = ({ refreshAllPending }) => {
 
         <button className="button-pendiente-form">Agregar</button>
       </form>
+      <button
+        className="buton-buscar"
+        onClick={() => {
+          const modalSearch = document.querySelector("#search-modal");
+          modalSearch.showModal();
+        }}
+      >
+        Buscar
+      </button>
     </div>
   );
 };

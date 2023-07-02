@@ -5,7 +5,7 @@ import "./home.css";
 import { getAllPending } from "../funtions/readAllPending";
 import PendienteCard from "../components/PendienteCard";
 import EditPendingModal from "../components/EditPendingModal";
-
+import SearchModal from "../components/SearchModal";
 const Home = ({ user }) => {
   const [allPending, setAllPending] = useState([]);
   const [selectedPending, setSelectedPending] = useState(null);
@@ -27,12 +27,11 @@ const Home = ({ user }) => {
     <div className="home">
       <h1 className="title">Home</h1>
       <Navbar user={user} />
-
       <EditPendingModal
         pendiente={selectedPending}
         refreshAllPending={refreshAllPending}
       />
-
+      <SearchModal />
       <PendienteForm refreshAllPending={refreshAllPending} />
       {allPending &&
         allPending.map((pending) => (
