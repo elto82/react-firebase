@@ -46,3 +46,16 @@
   margin: 0;
   font-size: 16px;
 }
+
+
+.item-image-container {
+  width: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.item-image {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+}

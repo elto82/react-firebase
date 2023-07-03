@@ -1,5 +1,6 @@
 import "./pendienteForm.css";
 import { createPending } from "../funtions/createPending.js";
+import { uploadFile } from "../funtions/uploadFile";
 const PendienteForm = ({ refreshAllPending }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -8,7 +9,10 @@ const PendienteForm = ({ refreshAllPending }) => {
     const description = e.target.description.value;
     const contact = e.target.contact.value;
 
-    const data = { priority, description, contact };
+    const file = e.target.archivo.files[0];
+    const url = await uploadFile(file);
+
+    const data = { priority, description, contact, url };
     await createPending(data);
     e.target.reset();
     refreshAllPending();
@@ -25,7 +29,6 @@ const PendienteForm = ({ refreshAllPending }) => {
             <option value="3">3</option>
           </select>
         </label>
-
         <label className="label-pendiente-form">
           Descripción
           <input
@@ -34,10 +37,18 @@ const PendienteForm = ({ refreshAllPending }) => {
             type="text"
           />
         </label>
-
         <label className="label-pendiente-form">
           Contacto
           <input id="contact" className="input-pendiente-form" type="email" />
+        </label>
+        <label className="label-pendiente-form" htmlFor="">
+          Archivo
+          <input
+            className="input-file"
+            type="file"
+            name="archivo"
+            id="archivo"
+          />
         </label>
 
         <button className="button-pendiente-form">Agregar</button>

@@ -27,6 +27,9 @@ const PendienteCard = ({
         <h3>Contacto</h3>
         <p>{pendiente.contact}</p>
       </div>
+      <div className="card-image">
+        <img className="img-card" src={pendiente?.url} alt="imagen" />
+      </div>
       <button className="btn-editar" onClick={mostrarModal}>
         Editar
       </button>

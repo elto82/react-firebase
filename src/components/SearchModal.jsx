@@ -21,9 +21,14 @@ const SearchModal = () => {
       {result &&
         result.map((item) => (
           <div key={item.id} className="search-modal-item">
+            <div className="item-image-container">
+              <img src={item.url} alt="Imagen" className="item-image" />
+            </div>
             {Object.entries(item).map(
               ([fieldName, value]) =>
-                fieldName !== "id" && (
+                fieldName !== "id" &&
+                fieldName !== "url" &&
+                fieldName !== "image" && (
                   <div key={fieldName}>
                     <label>{`${fieldName}:`}</label>
                     <p>{value}</p>

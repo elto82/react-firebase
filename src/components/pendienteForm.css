@@ -44,3 +44,27 @@
 .buton-buscar:hover {
   background-color: #45a049;
 }
+
+.input-file {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #000;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 12px;
+  color: #fff;
+}
+
+.input-file:hover {
+  border-color: #222;
+}
+
+.input-file:focus {
+  border-color: #66afe9;
+  outline: 0;
+}
